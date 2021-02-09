@@ -1,0 +1,62 @@
+.three-hour-card-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    /* border-bottom: 1px gray solid; */
+    border-left: 10px lightcoral solid;
+    grid-template-areas: 
+    "day time temp img weather";
+}
+
+.three-hour-card-day {
+    grid-area: day;
+    font-weight: bolder;
+}
+
+.three-hour-card-time {
+    grid-area: time;
+}
+
+.three-hour-card-temp {
+    grid-area: temp;
+}
+
+.three-hour-card-img {
+    grid-area: img;
+}
+
+.three-hour-card-weather {
+    grid-area: weather;
+}
+
+.twelve-am {
+border-left: 10px rgb(0, 26, 173) solid;
+}
+
+.three-am {
+border-left: 10px rgb(0, 60, 97) solid;
+}
+
+.six-am {
+border-left: 10px rgb(0, 26, 173) solid;
+}
+
+.nine-am {
+    border-left: 10px rgb(0, 110, 255) solid;
+}
+
+.twelve-pm {
+    border-left: 10px rgb(0, 183, 255) solid;
+}
+
+.three-pm {
+    border-left: 10px rgb(168, 230, 255) solid;
+}
+
+.six-pm {
+    border-left: 10px rgb(0, 183, 255) solid;
+}
+
+.nine-pm {
+    border-left: 10px rgb(0, 110, 255) solid;
+}
