@@ -1,0 +1,39 @@
+.news-div {
+    display: grid;
+    background-color: rgb(53, 53, 53);
+    text-decoration: none;
+    margin: 0 0 1rem 0;
+    padding: 20px;
+    border-radius: 5px;
+    overflow: scroll;
+    align-content: start;
+    grid-template-columns: 2fr 3fr;
+    column-gap: 1rem;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "image title"
+    "image content"
+    "image date"
+}
+
+.news-image {
+    grid-area: image;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.news-title {
+    grid-area: title;
+    color: white;
+    margin: 0 0 0 0;
+}
+
+.news-content {
+    grid-area: content;
+    color: lightgray;
+}
+
+.news-date {
+    grid-area: date;
+    color: lightskyblue;
+}
