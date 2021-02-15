@@ -3,12 +3,16 @@ import Search from './components/Search'
 import MainCard from './components/MainCard'
 import News from './components/News'
 import axios from 'axios'
+import { useMediaQuery } from "@material-ui/core"
 import './App.css'
 
 const api_key_weather = process.env.REACT_APP_API_KEY_WEATHER
 const api_key_news = process.env.REACT_APP_API_KEY_NEWS
 
 const App = () => {
+
+  // variable for using a media query
+  const isNavSm = useMediaQuery('(max-width: 775px)')
 
     const [weatherData, setWeatherData] = useState(0)
     const [newsData, setNewsData] = useState(0)
@@ -42,7 +46,7 @@ const App = () => {
     var options = {
       method: 'GET',
       url: 'https://dry-cliffs-62970.herokuapp.com/api.datanews.io/v1/news',
-      params: {q: `${cityInput}`, from: '2021-01-01', to: '2021-02-11', language: 'en'},
+      params: {q: `${cityInput} local`, from: '2021-02-01', to: '2021-02-15', language: 'en'},
       headers: {'Content-Type': 'application/json', 'x-api-key': `${api_key_news}`}
     };
 
@@ -67,9 +71,9 @@ const App = () => {
       <h1 className='app-title'>CURRENTLY˚</h1>
       <Search handleInput={handleInput} data={getData} />
       <p style={{marginTop: '2rem'}}>{isLoading ? `loading...` : null}</p>
-        <div className='content-div'>
-          {weatherData === 0 ? null : <MainCard className='weather-item' weatherData={weatherData} />}
-          <div className='news-item'>
+        <div className={isNavSm ? 'content-div-sm' : 'content-div-lg'}>
+          {weatherData === 0 ? null : <MainCard className={isNavSm ? 'weather-item-sm' : 'weather-item-lg'} weatherData={weatherData} />}
+          <div className={isNavSm ? 'news-item-sm' : 'news-item-lg'}>
             {newsData === 0 ? null : newsData.hits.map(item => <News title={item.title} image={item.imageUrl} content={item.content} pubDate={item.pubDate} url={item.url} />)}
           </div>
         </div>

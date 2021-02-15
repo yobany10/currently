@@ -1,7 +1,11 @@
 import React from 'react'
+import { useMediaQuery } from "@material-ui/core"
 import './MainCard.css'
 
 const MainCard = props => {
+    // variable for using a media query
+    const isNavSm = useMediaQuery('(max-width: 599px)')
+
     const fromKtoF = kelvin => {
         return Math.round((((kelvin - 273.15) * (9/5)) + 32))
     }
@@ -24,7 +28,7 @@ const MainCard = props => {
             <h1 className='main-card-temp'>{`${currentTemp} F˚`}</h1>
             <p className='main-card-temp-high'>{`High: ${tempHigh} F˚`}</p>
             <p className='main-card-temp-low'>{`Low: ${tempLow} F˚`}</p>
-            <div className='main-card-weather'>
+            <div className={isNavSm ? 'main-card-weather-sm' : 'main-card-weather-lg'}>
                 <img className='main-card-weather-icon' src={`http://openweathermap.org/img/wn/${weatherIcon}@2x.png`} />
                 <p className='main-card-description'>{`${weatherDescription}`}</p>
             </div>

@@ -1,4 +1,4 @@
-.content-div {
+.content-div-lg {
     display: grid;
     column-gap: 1rem;
     margin: 10vh 0;
@@ -8,11 +8,31 @@
     "weather news"
 }
 
-.weather-item {
+.content-div-sm {
+    display: grid;
+    gap: 1rem;
+    margin: 10vh 0;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "weather"
+    "news"
+}
+
+.weather-item-lg {
     grid-area: weather;
 }
 
-.news-item {
+.weather-item-sm {
+    grid-area: weather;
+}
+
+.news-item-lg {
+    grid-area: news;
+    overflow: scroll;
+}
+
+.news-item-sm {
     grid-area: news;
     overflow: scroll;
 }

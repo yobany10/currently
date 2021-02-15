@@ -33,31 +33,53 @@
 
 .main-card-temp-high {
     grid-area: temp-high;
+    justify-self: right;
 }
 
 .main-card-temp-low {
     grid-area: temp-low;
+    justify-self: left;
 }
 
-.main-card-weather {
+.main-card-weather-lg {
     display: grid;
+    grid-area: weather;
     align-items: center;
     border-top: 1px gray solid;
     border-bottom: 1px gray solid;
+    margin: 1rem 0;
     /* border-radius: 5px; */
-    grid-area: weather;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 1fr;
     grid-template-rows: auto;
     grid-template-areas: 
-    "icon description";
+    "icon"
+    "description";
+}
+
+.main-card-weather-sm {
+    display: grid;
+    grid-area: weather;
+    align-items: center;
+    border-top: 1px gray solid;
+    border-bottom: 1px gray solid;
+    margin: 1rem 0;
+    /* border-radius: 5px; */
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "icon"
+    "description";
 }
 
 .main-card-weather-icon {
     grid-area: icon;
+    justify-self: center;
 }
 
 .main-card-description {
     grid-area: description;
+    justify-self: center;
+    margin: 0 0 1rem 0;
 }
 
 .main-card-wind {
